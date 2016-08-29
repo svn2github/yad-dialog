@@ -14,6 +14,10 @@ and simple zenity-compatible wrapper
 
 # Building SVN version
 ====================
+Get svn version with command
+
+svn checkout https://svn.code.sf.net/p/yad-dialog/code/branches/legacy yad-read-only
+
 Before run the standard ./configure && make && make install procedure
 you need to generate build scripts. This can be done by running command
 
