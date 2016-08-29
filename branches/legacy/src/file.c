@@ -61,7 +61,6 @@ GtkWidget *
 file_create_widget (GtkWidget * dlg)
 {
   GtkWidget *w;
-  gchar *dir, *basename;
   GList *filt;
   GtkFileChooserAction action = GTK_FILE_CHOOSER_ACTION_OPEN;
 
@@ -83,21 +82,26 @@ file_create_widget (GtkWidget * dlg)
 
   if (options.common_data.uri)
     {
-      dir = g_path_get_dirname (options.common_data.uri);
-
-      if (g_path_is_absolute (options.common_data.uri) == TRUE)
-        gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (w), dir);
-
-      if (options.common_data.uri[strlen (options.common_data.uri) - 1] != '/')
+      if (!options.file_data.directory && g_file_test (options.common_data.uri, G_FILE_TEST_IS_DIR))
+        gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (w), options.common_data.uri);
+      else
         {
-          basename = g_path_get_basename (options.common_data.uri);
-          if (options.file_data.save)
-            gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (w), basename);
-          else
-            gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (w), options.common_data.uri);
-          g_free (basename);
+          gchar *dir = g_path_get_dirname (options.common_data.uri);
+
+          if (g_path_is_absolute (options.common_data.uri) == TRUE)
+            gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (w), dir);
+
+          if (options.common_data.uri[strlen (options.common_data.uri) - 1] != '/')
+            {
+              gchar *basename = g_path_get_basename (options.common_data.uri);
+              if (options.file_data.save)
+                gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (w), basename);
+              else
+                gtk_file_chooser_set_filename (GTK_FILE_CHOOSER (w), options.common_data.uri);
+              g_free (basename);
+            }
+          g_free (dir);
         }
-      g_free (dir);
     }
   else
     gtk_file_chooser_set_current_folder (GTK_FILE_CHOOSER (w), g_get_current_dir ());
