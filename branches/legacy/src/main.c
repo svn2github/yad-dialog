@@ -191,6 +191,7 @@ create_layout (GtkWidget *dlg)
           gtk_label_set_line_wrap (GTK_LABEL (text), TRUE);
           gtk_label_set_selectable (GTK_LABEL (text), options.data.selectable_labels);
           gtk_label_set_justify (GTK_LABEL (text), options.data.text_align);
+          gtk_widget_set_state (text, GTK_STATE_NORMAL);
           switch (options.data.text_align)
             {
             case GTK_JUSTIFY_LEFT:

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-29 13:12+0300\n"
+"POT-Creation-Date: 2016-10-04 13:32+0300\n"
 "PO-Revision-Date: 2009-04-30 16:47+0300\n"
 "Last-Translator: Victor Ananjevsky <ananasik@gmail.com>\n"
 "Language-Team: \n"
@@ -143,17 +143,17 @@ msgstr "Не можу розібрати файл %s: %s\n"
 msgid "Unable to open directory %s: %s\n"
 msgstr "Не можу відкрити каталог %s: %s\n"
 
-#: ../src/main.c:110 ../src/main.c:470
+#: ../src/main.c:110 ../src/main.c:471
 #, c-format
 msgid "%d sec"
 msgstr "%d сек"
 
-#: ../src/main.c:760 ../src/main.c:767
+#: ../src/main.c:761 ../src/main.c:768
 #, c-format
 msgid "Unable to parse YAD_OPTIONS: %s\n"
 msgstr "Не можу розібрати YAD_OPTIONS: %s\n"
 
-#: ../src/main.c:778
+#: ../src/main.c:779
 #, c-format
 msgid "Unable to parse command line: %s\n"
 msgstr "Не вдається розібрати командний рядок: %s\n"
@@ -177,19 +177,19 @@ msgstr "Невідома команда '%s'\n"
 msgid "Yad notification"
 msgstr "Діалог повідомлень"
 
-#: ../src/list.c:930
+#: ../src/list.c:936
 msgid "Add row"
 msgstr "Додати рядок"
 
-#: ../src/list.c:937
+#: ../src/list.c:943
 msgid "Delete row"
 msgstr "Видалити рядок"
 
-#: ../src/list.c:944
+#: ../src/list.c:950
 msgid "Duplicate row"
 msgstr "Скопіювати рядок"
 
-#: ../src/list.c:1089
+#: ../src/list.c:1095
 #, c-format
 msgid "No column titles specified for List dialog.\n"
 msgstr "Не задані заголовки стовпчиків для діалогу зі списком\n"
@@ -383,7 +383,7 @@ msgid "Set window maximized"
 msgstr "Задати вікну максимальний розмір"
 
 #: ../src/option.c:145
-msgid "Set window fulscreen"
+msgid "Set window fullscreen"
 msgstr "Розгорнути вікно на весь екран"
 
 #: ../src/option.c:147
